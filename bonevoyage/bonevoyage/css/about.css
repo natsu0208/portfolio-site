@@ -1,0 +1,530 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Poppins&display=swap');
+
+h2{
+  font-size: 3em;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 25px;
+  padding: 70px 0 80px 0;
+  font-weight: bold;
+}
+
+.sp_br{
+  display: none;
+}
+
+p{
+  line-height: 2;
+}
+
+.about{/*innerにwidthかけると左に余白できてしまった。commonでinnerの幅決めてたら、about.cssで上書きされる？*/
+  width: 100%; 
+  height: 100vh;
+  background-image: url(../images/bg_woman.png);
+  background-repeat: no-repeat;
+  background-position: 75% center; /*上から●pxという意味*/
+  margin-bottom: 110px;
+}
+
+.about p{
+  font-size: 18px;
+  color: #f1f6f9;
+}
+
+.text{
+  padding-bottom: 50px;
+}
+
+.num{
+  margin: 30px 0 0 20px;
+  color: #4352a2;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  line-height: 35px; /*heightと同じ数字にすることで天地中央に（fontによっては天地中央にできないこともあるが）*/
+  background-color: #f1f6f9;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.title{
+  content:"";
+  display: block;
+  width:3px;
+  height:576px;
+  background-color:#f1f6f9;
+  position: absolute;
+  top: 46px;
+}
+
+.pict{
+  padding-top: 30px;
+  position: relative;
+  margin-left: 70px;
+  justify-content: flex-start;
+}
+
+.icon1,.icon2,.icon3{
+  margin-left: 150px; /*margin-leftでなくleftではだめ？（できなかった）→margin-leftなどは「余白」を作るために使う。（左に○pxの空白を作る）
+  left:; は「表示位置」の指定。positionとセットで使う。（左から○pxの位置に表示）*/
+}
+
+.icon1{
+  background-image: url(../images/pict1.png);
+  background-repeat: no-repeat;
+  width: 123px; /*高さは入れなくても、画像全体ちゃんと表示されるのなぜ？→flexして隣に来ている要素の高さのおかげ？（flexないと画像欠けたし）*/
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.icon1:hover{
+  background-image: url(../images/pict1_hover.png);
+}
+
+.icon2{
+  background-image: url(../images/pict2.png);
+  background-repeat: no-repeat;
+  width: 121px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.icon2:hover{
+  background-image: url(../images/pict2_hover.png);
+}
+
+.icon3{
+  background-image: url(../images/pict3.png);
+  background-repeat: no-repeat;
+  width: 120px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.icon3:hover{
+  background-image: url(../images/pict3_hover.png);
+  width: 140px;
+  margin-left: 130px; /*アイコンが欠けて、葬儀の説明文も右に動いてしまう。→ホバー後の画像を小さくして幅を指定し、マージンを調整するしかない？*/
+}
+
+.one::before {
+  content:"";
+  display: block; /*contentの""の中身はインライン要素なので、高さと幅を掛けるためにdisplay: block;に。*/
+  width:3px;
+  height: 72px;
+  background-color: #f1f6f9;
+  position: absolute;
+  left: 37px;
+  top: -10px;
+}
+
+.one::after {
+  content:"";
+  display: block; /*contentの""の中身はインライン要素なので、高さと幅を掛けるためにdisplay: block;に。*/
+  width:3px;
+  height: 500px;
+  background-color: #f1f6f9;
+  position: absolute;
+  left: 37px;
+  top: 85px;
+}
+
+.pict::before {
+  content:"";
+  display: block; /*contentの""の中身はインライン要素なので、高さと幅を掛けるためにdisplay: block;に。*/
+  width:120px;
+  height:1px;
+  background-color:#f1f6f9;
+  position: absolute;
+  left: 54px;
+  top: 76px;
+}
+
+.box{
+  color: #4352a2;
+  background-color: #f1f6f9;
+  border-radius: 10px 10px 10px 10px;/*上の角を丸く。数値は左上からスタート*/
+  padding: 15px 15px 5px 20px;
+  margin:0 0 40px 90px;
+  box-sizing: border-box;
+}
+
+h4{
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.box p{
+  font-size: 15px;
+}
+
+.flow{
+  margin-bottom: 95px;
+  width: 960px;
+}
+
+h5{
+  display: inline-block; /*文字分の長さになるもの、ボーダーじゃなくてなんだっけ・・*/
+  font-size: 28px;
+  border-bottom: 2px solid #f1f6f9;
+  margin-bottom: 15px;
+}
+
+h6{
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 5px dotted #ec6159;
+  margin-bottom: 10px;
+}
+
+aside .flex{
+  justify-content: flex-start; /*flexがかかっているところにかける*/
+}
+
+aside{
+  width: 960px;
+  height: 960px; /*高さ決めない方がいいと教えてもらったが、高さを決めないといけない円を入れたことで
+  フッターとコンテンツが重なるようになってしまった。この場合は左記のように高さ入れてもいい？*/
+  position: relative;
+}
+
+/*高さはあまり入れない方がいいが、画像を入れるときは高さ入れよう*/
+
+/*.group1{
+  background-image: url(../images/bg1.png);
+  background-repeat: no-repeat;
+  width: 735px;
+  /*height: 395px; 高さはあまり入れない方がいいので、書かない。一旦丸を気にせずどんどんレイアウトを整えていく。（→group1にflexをかける）
+  margin-bottom: 30px;
+  /*line-height: 1; 無くてもいい。ブラウザによって背景から文字がはみ出るのを防ぎたい→asideやgroup、containerなど各所で幅を取っていく
+}
+
+.group2{
+  background-image: url(../images/bg2.png);
+  background-repeat: no-repeat;
+  line-height: 1;
+  width: 750px;
+  /*height: 353px; ここにheightを入れるとcopyrightと重なってしまう。heightはあまり入れなくて大丈夫
+}*/
+
+.container1{
+  padding-top: 55px;
+  padding-left: 10px;
+  margin: 30px 0 0 20px;
+  width: 330px;
+  height: 310px;
+  line-height: 35px; /*heightと同じ数字にすることで天地中央に（fontによっては天地中央にできないこともあるが）*/
+  background-color: rgba(241, 246, 249, 0.3);
+  border-radius: 50%;
+  background-position: center left;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50px;
+  left: 110px
+}
+
+.container2{
+  padding-top: 55px;
+  padding-left: 9px;
+  padding-bottom: 90px; /*高さを設定するのは好ましくないので、パディングをとることで背景が全部表示されるように*/
+  width: 340px;
+  height: 305px; /*正円になったが、なんでwidthと数値違う？*/
+  line-height: 35px; /*heightと同じ数字にすることで天地中央に（fontによっては天地中央にできないこともあるが）*/
+  background-color: rgba(241, 246, 249, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 108px;
+  left: 446px;
+}
+
+h5{
+  font-size: 20px;
+  margin: 40px 0px 12px 10px; /*効いてない・・PC版に打ち消されてる*/
+}
+
+.method{
+  position: absolute;
+  top: 405px;
+}
+
+.container3{
+  padding-top: 58px;
+  padding-left: 15px;
+  width: 315px;
+  height: 285px;
+  line-height: 35px;
+  background-color: rgba(241, 246, 249, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 480px;
+  left: 80px;
+}
+
+.container4{
+  padding-left: 13px;
+  padding-top: 55px;
+  padding-bottom: 235px;
+  width: 310px;
+  height: 260px;
+  line-height: 35px; 
+  background-color: rgba(241, 246, 249, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 656px;
+  left: 315px;
+}
+
+.container5{
+  padding-left: 1px;
+  padding-top: 55px;
+  width: 310px;
+  height: 270px;
+  line-height: 35px;
+  background-color: rgba(241, 246, 249, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 515px;
+  left: 545px;
+}
+
+.fade{
+  opacity : 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translateY(30px);
+}
+
+.active{
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.fadeIn_right,.fadein{
+  transition: .7s ease-in-out ;
+}
+
+.far{
+  margin: 0 10px 3px 0;
+}
+
+
+
+@media screen and (max-width: 768px){
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mainNav {
+      display: none;
+  }
+
+  /*.inner {
+    width: 80vw;
+    padding-right: 0;
+    margin: 0 20vw; /*上でvw使っているので、ここを20pxにしてしまうとはみ出る。上のwidthと足して100になるように20vwを設定する
+  }*/
+
+  .flex {
+    display: block;
+  }
+
+  .sns {
+    display: none;
+  }
+
+  .bg {
+    display: none;
+  }
+
+  .scrollArrow {
+    display: none;
+  }
+
+  br{
+    display: none;
+  }
+
+  h2{
+    padding-top: 12vh;
+    padding-bottom: 3vh;
+  }
+
+/*  main{
+    margin-left: 10px;
+  } /*クラスが強い、という優先順位の関係で効かない。効かせたいなら点数を上げてあげる*/
+
+  .about{
+    background-position: top left 55px; /*上から●pxという意味*/
+    margin-bottom: 110px;
+    padding-top: 405px;
+    width: auto;
+    height: auto; /*pcのheight:100vhのままだと、スマホのとき余白の調整がうまくできなかった→だからheightはあまり入れたくない。*/
+  }
+
+
+
+  
+  h3{
+    padding: 25px 0 45px 0;
+    line-height: 1.5;
+  }
+
+
+
+
+  .sp_br{
+    display:inline;
+  }
+
+  .flow{
+    width: auto;
+    box-sizing: border-box;
+  }
+
+  footer{
+    width: auto;
+  }
+
+  .fade{
+    margin-top: -20px;
+  }
+
+  .one::before,.one::after,.pict::before{
+    display: none;
+  }
+
+
+  .pict{
+    margin: 30px 0 0 10px;
+    width: auto;
+  }
+
+  .num{
+    margin-top: 5px;
+  }
+
+  .box{
+    padding: 10px;
+    margin: 20px 10px 0 0;
+    box-sizing: border-box;
+  }
+
+ .icon1{
+    width: 123px;
+    height: 100px; /*PC版でwidth: 123px;書いてたけど、レスポンシブでも書かないと出ない？*/
+    margin-left: 30px;
+  }
+
+  .icon1:hover{
+    width: 122px;
+    height: 105px;
+  }
+
+  .icon2{
+    width: 121px;
+    height: 89px;
+    margin-left: 30px;
+  }
+
+  .icon2:hover{
+    width: 121px;
+  }
+
+  .icon3{
+    width: 135px;
+    height: 95px;
+    margin-left: 30px;
+  }
+
+  .icon3:hover{
+    width: 140px;
+    margin-left: 30px;
+  }
+
+  .flow .sp1{
+    display: flex;
+    justify-content: flex-start; /*数字とピクトグラムの間のspace-betweenなくす*/
+  }
+
+  aside{
+    margin-left: 0;
+    width: auto;
+    height: auto; /*footer上がってこないようにするにはこれでいい？*/
+    box-sizing: border-box;
+  }
+
+  .about p{
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  h4{
+    margin: 10px; /*margin: auto;で中央にならない？text-align:center;?*/
+  }
+
+  .box p{
+    margin: 10px; /*margin: auto;で中央にならない？*/
+  }
+
+  h5{
+    margin: 5px;
+  }
+
+  h6{
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 35px;
+    padding-bottom: 19px;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  aside p br{
+    display: none;
+  }
+
+  /*aside{
+    width: 960px;
+    height: 960px;
+  } /*高さ決めるの良くないが、今回は決めないとフッター上がってくる？*/
+
+  .container1,.container2,.container3,.container4,.container5{
+    padding: 20px 20px 0 20px;
+    margin: 25px 5px 0 5px;
+    width: auto;
+    height: 275px;
+    line-height: 55px;
+    position: static; /*アブソルート解除するのこれでいい？他にも方法ある？clear bothなど？*/
+  }
+  
+  .method{
+    margin: 50px 0 5px 0;
+    position: static;
+  }
+
+  .fadeIn_right,.fadein{
+    transition: .7s ease-in-out ;
+  }
+
+}

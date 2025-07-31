@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+.planWrapper {
+  margin-top: 10vh;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 5vh;
+}
+.price {
+  color: #4b55a1;
+  background-color: #f1f6f9;
+  padding: 20px 40px;
+  margin-bottom: 120px;
+  box-sizing: border-box;
+}
+h3 {
+  font-size: 3em;
+  font-weight: bold;
+}
+.left {
+  width: 80%;
+  white-space: nowrap;
+}
+dl dt {
+  float: left;
+  clear: both;
+}
+.head {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 7px;
+  border-left: 2px solid #4b55a1;
+  padding-left: 5px;
+}
+dd {
+  padding-left: 400px;
+}
+.indent,.indent1 {
+  text-indent: 0.5em;
+  line-height: 16px;
+}
+.group {
+  border-bottom: 1px solid #4b55a1;
+  padding: 39px 0;
+}
+.btn {
+  width: 170px;
+  background-color: #4b55a1;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px 0;
+  margin: 25px auto 0px;
+  height: auto;
+}
+.right img {
+  height: 100%;
+}
+.right {
+  width: 60%;
+  text-align: center;
+}
+.ex {
+  font-size: 3em;
+  margin-bottom: 54px;
+}
+.figure {
+  position: relative;
+  width: 300px;
+}
+.box img {
+  width: 100%;
+}
+h4 {
+  color: #fbdab8;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: -18px;
+  left: 166px;
+}
+.style {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 3px 3px 8px #000;
+  position: absolute;
+  top: 14px;
+  left: 9px;
+}
+/*　ハンバーガーボタン　*/
+.menuBtn {
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+.menuBtn span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 6px;
+  background: #f1f6f9;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.menuBtn span:nth-child(1) {
+  top: 10px;
+}
+.menuBtn span:nth-child(2) {
+  top: 20px;
+}
+.menuBtn span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.menuBtn.active span:nth-child(1) {
+  top: 16px;
+  left: 6px;
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.menuBtn.active span:nth-child(2),
+.menuBtn.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(-315deg);
+  -moz-transform: rotate(-315deg);
+  transform: rotate(-315deg);
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateY(0%);
+}
+
+.menu {
+  color: #4b55a1;
+  line-height: 24px;
+  background-color: #f1f6f9;
+  width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 17px 0 20px;
+  border-radius: 26px;
+  position: relative;
+  margin: 38px auto 0;
+  display: none;
+}
+
+/* 吹き出しの三角 */
+.menu::before {
+  content: '';
+  position: absolute;
+  top: -23px;
+  border-left: 39px solid transparent;
+  border-bottom: 24px solid #f1f6f9;
+  /* 三角の位置 */
+  left: 29%;
+  transform: translateX(-50%);
+}
+.triangle {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 24px solid #4b55a1;
+  margin: 14px auto;
+}
+.line {
+  text-decoration: underline;
+  text-underline-offset: 5px; /* 下線と文字の間をあける */
+}
+.bold {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 35px;
+}
+.plan {
+  margin-bottom: 50px;
+}
+
+/*下からフェードイン*/
+.fade-in-bottom {
+  opacity: 0;
+  animation-name: fadein-bottom;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* jqで追加 */
+/* プランふわっと順番に出てくる */
+.figure {
+  /*デフォルトで透明度0に指定*/
+  opacity: 0;
+  transition: 3s;
+}
+
+/*スクロールした時に追加されるクラス*/
+.fadein {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .inner,
+  .left,
+  .btn,
+  .right,
+  .figure,
+  .menu,
+  .right img,
+  .box img {
+    width: auto;
+  }
+  .flex {
+    display: block;
+  }
+  .logo {
+    z-index: 10;
+  }
+  .section {
+    height: auto;
+  }
+  .title {
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+  .price {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 50px;
+    height: auto;
+  }
+  .left {
+    width: 80%;
+    margin: 0 auto;
+    white-space: normal;
+  }
+  dl dt {
+    float: none;
+  }
+  dd {
+    padding-left: 165px;
+    white-space: nowrap;
+  }
+  .btn {
+    margin-bottom: 40px;
+  }
+  .left ul li {
+    line-height: 23px;
+  }
+  .ex {
+    text-align: center;
+  }
+  .box {
+    width: 245px;
+    margin: 0 auto;
+  }
+  .box img {
+    width: 100%;
+  }
+  h4 {
+    left: 110px;
+  }
+  .menu {
+    width: 210px;
+    margin-bottom: 60px;
+  }
+  .menuBtn {
+    margin-bottom: 52px;
+  }
+  .planWrapper{
+    height: auto;
+  }
+}
