@@ -1,0 +1,68 @@
+@charset "utf-8";
+/*トップページ用*/
+
+h1{
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+/*フェードイン*/
+.fadeIn_right,.fadein1{
+  transition: .7s ease-in-out ;
+}
+
+.fadeIn_left,.fadein2{
+  transition: .7s ease-in-out ;
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+z-index: 99999; /*ハンバーガーが出ないように、ハンバーガーの値よりも大きくする*/
+width: 100%;
+height: 100%;
+background: #D3DE32;
+text-align:center;
+color:#006A71;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 9999;
+width: 100%;
+transform: translate(-50%, -50%);
+color: #006A71;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+   /*幅をとにかくなくす必要がある*/
+   .inner,nav{ /*navタグにも設定したはずなので。同じスタイルはまとめて書く*/
+    width: auto;
+  }
+
+  .flex{
+    display: block;
+  }
+
+
+}
